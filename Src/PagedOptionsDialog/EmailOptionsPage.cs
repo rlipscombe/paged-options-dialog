@@ -2,8 +2,13 @@
 
 namespace PagedOptionsDialog
 {
-    internal class EmailOptionsPage : PropertyPage
+    internal partial class EmailOptionsPage : PropertyPage
     {
+        public EmailOptionsPage()
+        {
+            InitializeComponent();
+        }
+
         public override string Title
         {
             get { return "E-Mail"; }

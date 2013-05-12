@@ -47,11 +47,20 @@
     <Compile Include="AdvancedOptionsPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="AdvancedOptionsPage.Designer.cs">
+      <DependentUpon>AdvancedOptionsPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmailOptionsPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="EmailOptionsPage.Designer.cs">
+      <DependentUpon>EmailOptionsPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="GeneralOptionsPage.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GeneralOptionsPage.Designer.cs">
+      <DependentUpon>GeneralOptionsPage.cs</DependentUpon>
     </Compile>
     <Compile Include="OptionsDialog.cs">
       <SubType>Form</SubType>
@@ -64,6 +73,21 @@
     <Compile Include="PropertyPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdvancedOptionsPage.resx">
+      <DependentUpon>AdvancedOptionsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailOptionsPage.resx">
+      <DependentUpon>EmailOptionsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralOptionsPage.resx">
+      <DependentUpon>GeneralOptionsPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OptionsDialog.resx">
       <DependentUpon>OptionsDialog.cs</DependentUpon>
     </EmbeddedResource>

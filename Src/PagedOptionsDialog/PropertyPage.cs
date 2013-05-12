@@ -14,5 +14,15 @@ namespace PagedOptionsDialog
         {
             get { return null; }
         }
+
+        public virtual void OnSetActive()
+        {
+            // Nothing by default.
+        }
+
+        public virtual void OnApply()
+        {
+            // Nothing by default.
+        }
     }
 }

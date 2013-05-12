@@ -6,6 +6,7 @@ namespace PagedOptionsDialog
 {
     public partial class OptionsDialog : Form
     {
+        private PropertyPage _activePage;
         public IList<PropertyPage> Pages { get; private set; }
 
         public OptionsDialog()
@@ -83,6 +84,33 @@ namespace PagedOptionsDialog
             item.Tag = page;
 
             listView.Items.Add(item);
+        }
+
+        private void listView_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            if (_activePage != null)
+                _activePage.Visible = false;
+
+            if (listView.SelectedItems.Count != 0)
+            {
+                var selectedItem = listView.SelectedItems[0];
+                var page = (PropertyPage)selectedItem.Tag;
+                _activePage = page;
+            }
+
+            if (_activePage != null)
+            {
+                _activePage.Visible = true;
+                _activePage.OnSetActive();
+            }
+        }
+
+        private void okButton_Click(object sender, System.EventArgs e)
+        {
+            foreach (var propertyPage in Pages)
+            {
+                propertyPage.OnApply();
+            }
         }
     }
 }

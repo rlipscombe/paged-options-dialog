@@ -2,8 +2,13 @@
 
 namespace PagedOptionsDialog
 {
-    internal class AdvancedOptionsPage : PropertyPage
+    internal partial class AdvancedOptionsPage : PropertyPage
     {
+        public AdvancedOptionsPage()
+        {
+            InitializeComponent();
+        }
+
         public override string Title
         {
             get { return "Advanced"; }

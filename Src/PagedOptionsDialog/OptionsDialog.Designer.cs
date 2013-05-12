@@ -32,16 +32,17 @@
             this.pagePanel = new System.Windows.Forms.Panel();
             this.listPanel = new System.Windows.Forms.Panel();
             this.listView = new System.Windows.Forms.ListView();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.buttonPanel = new System.Windows.Forms.Panel();
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.listPanel.SuspendLayout();
             this.buttonPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // pagePanel
             // 
+            this.pagePanel.BackColor = System.Drawing.SystemColors.Control;
             this.pagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pagePanel.Location = new System.Drawing.Point(95, 0);
             this.pagePanel.Name = "pagePanel";
@@ -50,6 +51,7 @@
             // 
             // listPanel
             // 
+            this.listPanel.BackColor = System.Drawing.SystemColors.Control;
             this.listPanel.Controls.Add(this.listView);
             this.listPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.listPanel.Location = new System.Drawing.Point(0, 0);
@@ -61,15 +63,24 @@
             // listView
             // 
             this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView.HideSelection = false;
             this.listView.LargeImageList = this.imageList;
             this.listView.Location = new System.Drawing.Point(3, 3);
             this.listView.Name = "listView";
             this.listView.Size = new System.Drawing.Size(89, 302);
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
+            // 
+            // imageList
+            // 
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageList.ImageSize = new System.Drawing.Size(32, 32);
+            this.imageList.TransparentColor = System.Drawing.Color.Fuchsia;
             // 
             // buttonPanel
             // 
+            this.buttonPanel.BackColor = System.Drawing.SystemColors.Control;
             this.buttonPanel.Controls.Add(this.cancelButton);
             this.buttonPanel.Controls.Add(this.okButton);
             this.buttonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -101,12 +112,7 @@
             this.okButton.TabIndex = 0;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
-            // 
-            // imageList
-            // 
-            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.imageList.ImageSize = new System.Drawing.Size(32, 32);
-            this.imageList.TransparentColor = System.Drawing.Color.Fuchsia;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // OptionsDialog
             // 

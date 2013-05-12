@@ -2,8 +2,13 @@
 
 namespace PagedOptionsDialog
 {
-    internal class GeneralOptionsPage : PropertyPage
+    internal partial class GeneralOptionsPage : PropertyPage
     {
+        public GeneralOptionsPage()
+        {
+            InitializeComponent();
+        }
+
         public override string Title
         {
             get { return "General"; }
